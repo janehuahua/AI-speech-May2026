@@ -321,6 +321,7 @@ img:not(.slide-bg-img){max-width:100%;max-height:min(50vh,400px);object-fit:cont
 .qy-task-table td{padding:clamp(.65rem,1.3vh,1.1rem) clamp(.6rem,1.2vw,1.2rem);vertical-align:top;line-height:1.55}
 .qy-task-table td:first-child{font-weight:700;color:var(--highlight-red);width:22%;white-space:nowrap}
 .qy-task-table.green td:first-child{color:var(--green-bright)}
+.qy-task-table.green b{color:#9fe9b1;font-weight:700}
 .qy-task-table td:last-child{color:rgba(255,255,255,.85)}
 .qy-task-summary{display:flex;gap:clamp(2rem,4vw,4rem);justify-content:center;margin-top:clamp(.6rem,1.4vh,1.2rem);font-size:var(--h3-size);font-weight:700;flex-wrap:wrap}
 .qy-task-summary .item .label{color:var(--text-sub);font-weight:500;margin-right:.4em;font-size:var(--body-size)}
@@ -450,6 +451,14 @@ img:not(.slide-bg-img){max-width:100%;max-height:min(50vh,400px);object-fit:cont
 .xh-course-in .lead{font-size:var(--small-size);color:rgba(255,255,255,.5);letter-spacing:.1em;margin-bottom:clamp(.6rem,1.2vh,1rem)}
 .xh-course-chips{display:flex;flex-wrap:wrap;gap:clamp(.5rem,1vh,.8rem) clamp(.5rem,1vw,.9rem);justify-content:center}
 .xh-course-chip{font-size:var(--body-size);color:#cdeed5;background:rgba(102,210,130,.14);border:1px solid rgba(102,210,130,.34);border-radius:999px;padding:.4em 1.1em;font-weight:600}
+.qy-yes-two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1rem,2.4vw,2.6rem);width:100%;max-width:min(94vw,1200px);align-items:start}
+.qy-yes-col{display:flex;flex-direction:column;gap:clamp(.6rem,1.3vh,1.1rem)}
+.qy-yes-coltitle{font-size:var(--h3-size);font-weight:800;color:#7CE59A;text-align:center;text-shadow:0 0 16px rgba(102,210,130,.4);letter-spacing:.03em}
+.qy-yes-two .qy-task-table{font-size:var(--small-size)}
+.qy-yes-two .qy-task-table td{padding:clamp(.3rem,.75vh,.7rem) clamp(.45rem,.9vw,.9rem);line-height:1.42}
+.qy-yes-two .qy-task-table td:first-child{width:26%}
+.qy-yes-two .qy-yes-summary{align-self:center}
+@media(max-width:760px){.qy-yes-two{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -987,15 +996,52 @@ img:not(.slide-bg-img){max-width:100%;max-height:min(50vh,400px);object-fit:cont
       <p class="qy-task-sub">任务一：市场调研<span class="sub-note">（清颜真实做法）</span></p>
     </div>
     <table class="qy-task-table green">
-      <tr class="reveal"><td>找竞品</td><td>让 AI 列出所有美国市场屏障修护精华<br><span style="color:var(--text-sub)">1 小时，出来 102 个候选，按窄边界筛选留 47 个</span></td></tr>
-      <tr class="reveal"><td>采集评论</td><td>自己写脚本（让 AI 写）爬 Amazon<br><span style="color:var(--text-sub)">3 万条原始评论全部拿到手，费用：0 元</span></td></tr>
-      <tr class="reveal"><td>研究 FDA</td><td>让 AI 读 FDA 官网原文，按问题给答案<br><span style="color:var(--text-sub)">自己复核关键条款，费用：0 元</span></td></tr>
+      <tr class="reveal"><td>找竞品</td><td>用<b>通用大模型</b>对话，让它列出美国市场所有屏障修护精华<br><span style="color:var(--text-sub)">1 小时出 102 个候选，人工按窄边界筛留 47 个</span></td></tr>
+      <tr class="reveal"><td>采集评论</td><td>用 <b>Vibe Coding</b> 让 AI 写爬虫脚本，自己不懂代码也跑下 Amazon<br><span style="color:var(--text-sub)">3 万条原始评论全部拿到手，费用：0 元</span></td></tr>
+      <tr class="reveal"><td>研究 FDA</td><td>用<b>通用大模型</b>读 FDA 官网原文，按问题给答案<br><span style="color:var(--text-sub)">人工复核关键条款，费用：0 元</span></td></tr>
     </table>
     <div class="qy-yes-summary reveal-scale"><div class="qy-yes-summary-in">
       <div class="item"><span class="label">时间实际</span><span class="green">1 周</span></div>
       <div class="item"><span class="label">费用实际</span><span class="green">0 元</span></div>
     </div></div>
     <p class="qy-task-source reveal">林知夏和 Mike 加起来花了 5 个工作日</p>
+  </div>
+  <span class="slide-number">31</span>
+</section>
+
+<section class="slide qy-dark" id="s31b">
+  <div class="slide-content" style="align-items:center;gap:clamp(.9rem,2vh,1.5rem);justify-content:flex-start;padding-top:clamp(1.6rem,4vh,3rem)">
+    <div class="qy-no-ai-head reveal">
+      <h2 class="qy-yes-ai-title">有了 AI</h2>
+      <p class="qy-task-sub">任务二 & 任务三<span class="sub-note">（清颜真实做法）</span></p>
+    </div>
+    <div class="qy-yes-two">
+      <div class="qy-yes-col reveal-left">
+        <div class="qy-yes-coltitle">任务二 · 数据分析</div>
+        <table class="qy-task-table green">
+          <tr><td>读评论</td><td>用 <b>Skill</b>（在 CodeBuddy 里）批量编码，同一套标准给 3 万条评论分类打标<br><span style="color:var(--text-sub)">一个下午跑完，人工要 100 天</span></td></tr>
+          <tr><td>找缺口</td><td>用 <b>Skill</b> 跑差评主题归类，横向对比竞品共同软肋<br><span style="color:var(--text-sub)">锁定屏障修护这个机会点</span></td></tr>
+          <tr><td>做决策</td><td>定位和定价用<b>通用大模型</b>对话做判断，靠人加框架</td></tr>
+        </table>
+        <div class="qy-yes-summary reveal-scale"><div class="qy-yes-summary-in">
+          <div class="item"><span class="label">时间实际</span><span class="green">3 天</span></div>
+          <div class="item"><span class="label">费用实际</span><span class="green">0 元</span></div>
+        </div></div>
+      </div>
+      <div class="qy-yes-col reveal-right">
+        <div class="qy-yes-coltitle">任务三 · 内容生成</div>
+        <table class="qy-task-table green">
+          <tr><td>Listing</td><td>用<b>通用大模型</b>按 SB7 框架生成 Amazon Listing 初稿<br><span style="color:var(--text-sub)">3 款 × 多版本，人工定稿</span></td></tr>
+          <tr><td>品牌故事</td><td>用<b>通用大模型</b>按 SB7 起草品牌故事和社媒内容<br><span style="color:var(--text-sub)">Lisa 改写润色成定稿</span></td></tr>
+          <tr><td>合规审核</td><td>AI 先查 FDA 红线，再人工复核</td></tr>
+        </table>
+        <div class="qy-yes-summary reveal-scale"><div class="qy-yes-summary-in">
+          <div class="item"><span class="label">时间实际</span><span class="green">1 周</span></div>
+          <div class="item"><span class="label">费用实际</span><span class="green">0 元</span></div>
+        </div></div>
+      </div>
+    </div>
+    <p class="qy-task-source reveal"><b style="color:var(--green-bright)">Skill</b> 做分析，<b style="color:var(--green-bright)">通用大模型</b> 做判断，<b style="color:var(--green-bright)">Vibe Coding</b> 做呈现</p>
   </div>
   <span class="slide-number">31</span>
 </section>
